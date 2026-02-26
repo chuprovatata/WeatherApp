@@ -14,7 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.weatherapp.app.ui.components.CityCard
@@ -182,13 +181,6 @@ fun WeatherScreen(
                                 style = MaterialTheme.typography.titleMedium,
                                 color = MaterialTheme.colorScheme.primary
                             )
-                            Text(
-                                text = "Проверьте файл cities.json в assets",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.error,
-                                textAlign = TextAlign.Center,
-                                modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp)
-                            )
                         }
                     }
                 } else {
@@ -222,7 +214,7 @@ fun WeatherScreen(
                 Button(
                     onClick = {
                         val url = UrlBuilder.buildYandexUrl(selectedCity!!, selectedPeriod)
-                        Log.d("WeatherScreen", "🚀 Открываем URL: $url")
+                        Log.d("WeatherScreen", "Открываем URL: $url")
                         onOpenBrowser(url)
                     },
                     modifier = Modifier
